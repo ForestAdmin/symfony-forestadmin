@@ -25,25 +25,12 @@ class ForestAgent implements RouteLoaderInterface
      */
     public function __construct(private KernelInterface $appKernel, private EntityManagerInterface $entityManager)
     {
-        $this->options = [
-            'debug'           => true,
-            'authSecret'      => 'RykWz6JrqD0ctwzIXDfXeb6J8CDZqHMy',
-//            'agentUrl'        => 'https://localhost:8000',
-            'agentUrl'        => 'https://production.development.forestadmin.com',
-            'envSecret'       => 'dab924020263d05f608994e9f39ae47cbae3154426cbbbeb5c1906932b99fd02', // prod
-//            'envSecret'       => '8ac1173b520cf9f91654a9b074d69d31ee2835491dbf5b78294e6f2138019eeb',
-            'forestServerUrl' => 'https://api.development.forestadmin.com',
-            'isProduction'    => false,
-            'loggerLevel'     => 'Info',
-            'prefix'          => 'forest',
-            'schemaPath'      => $this->appKernel->getProjectDir() . '/.forestadmin-schema.json',
-            'projectDir'      => $this->appKernel->getProjectDir()
-        ];
+        $this->options = $this->loadOptions();
         $this->agent = new AgentFactory($this->options, ['orm' => $this->entityManager]);
         $this->loadConfiguration();
     }
 
-    public function loadConfiguration(): void
+    private function loadConfiguration(): void
     {
         if (file_exists($this->appKernel->getProjectDir() . '/config/packages/symfony_forest_admin.php')) {
             $callback = require $this->appKernel->getProjectDir() . '/config/packages/symfony_forest_admin.php';
@@ -52,6 +39,27 @@ class ForestAgent implements RouteLoaderInterface
             // set the default datasource for symfony app
             $this->agent->addDatasource(new DoctrineDatasource($this->entityManager));
         }
+    }
+
+    private function loadOptions(): array
+    {
+        return [
+            'debug'           => $this->env('FOREST_DEBUG', true),
+            'authSecret'      => $this->env('FOREST_AUTH_SECRET'),
+            'agentUrl'        => $this->env('FOREST_AGENT_URL'),
+            'envSecret'       => $this->env('FOREST_ENV_SECRET'),
+            'forestServerUrl' => $this->env('FOREST_SERVER_URL', 'https://api.forestadmin.com'),
+            'isProduction'    => $this->env('FOREST_IS_PRODUCTION', false),
+            'loggerLevel'     => $this->env('FOREST_LOGGER_LEVEL', 'Info'),
+            'prefix'          => $this->env('FOREST_PREFIX', 'forest'),
+            'schemaPath'      => $this->appKernel->getProjectDir() . '/.forestadmin-schema.json',
+            'projectDir'      => $this->appKernel->getProjectDir(),
+        ];
+    }
+
+    private function env(string $key, $defaultValue = null)
+    {
+        return array_key_exists($key, $_ENV) ? $_ENV[$key] : $defaultValue;
     }
 
     /**
