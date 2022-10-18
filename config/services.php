@@ -1,8 +1,8 @@
 <?php
 
-use Nicolas\SymfonyForestAdmin\EventListener\ForestCors;
-use Nicolas\SymfonyForestAdmin\Routing\RoutesLoader;
-use Nicolas\SymfonyForestAdmin\Service\ForestAgent;
+use ForestAdmin\SymfonyForestAdmin\EventListener\ForestCors;
+use ForestAdmin\SymfonyForestAdmin\Routing\RoutesLoader;
+use ForestAdmin\SymfonyForestAdmin\Service\ForestAgent;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use function Symfony\Component\DependencyInjection\Loader\Configurator\service;
 
@@ -18,7 +18,7 @@ return static function(ContainerConfigurator $configurator) {
 
     $services->alias(ForestAgent::class, 'forest.agent');
 
-    $services->load('Nicolas\\SymfonyForestAdmin\\Controller\\', '../src/Controller')
+    $services->load('ForestAdmin\\SymfonyForestAdmin\\Controller\\', '../src/Controller')
         ->tag('controller.service_arguments');
 
     $services->set('forest.cors', ForestCors::class)
