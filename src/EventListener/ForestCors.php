@@ -1,9 +1,8 @@
 <?php
 
-namespace Nicolas\SymfonyForestAdmin\EventListener;
+namespace ForestAdmin\SymfonyForestAdmin\EventListener;
 
 use Asm89\Stack\CorsService;
-use Illuminate\Support\Str;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

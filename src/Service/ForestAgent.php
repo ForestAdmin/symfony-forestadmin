@@ -1,6 +1,6 @@
 <?php
 
-namespace Nicolas\SymfonyForestAdmin\Service;
+namespace ForestAdmin\SymfonyForestAdmin\Service;
 
 use Doctrine\ORM\EntityManagerInterface;
 use ForestAdmin\AgentPHP\Agent\Builder\Agent;
@@ -8,8 +8,7 @@ use ForestAdmin\AgentPHP\Agent\Builder\AgentFactory;
 use ForestAdmin\AgentPHP\Agent\Http\Router;
 use ForestAdmin\AgentPHP\DatasourceDoctrine\DoctrineDatasource;
 use ForestAdmin\AgentPHP\DatasourceToolkit\Components\Charts\Chart;
-use ForestAdmin\AgentPHP\DatasourceToolkit\Components\Contracts\DatasourceContract;
-use Nicolas\SymfonyForestAdmin\Controller\ForestController;
+use ForestAdmin\SymfonyForestAdmin\Controller\ForestController;
 use Symfony\Bundle\FrameworkBundle\Routing\RouteLoaderInterface;
 use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Component\Routing\Route;

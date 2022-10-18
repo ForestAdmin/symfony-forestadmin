@@ -1,5 +1,5 @@
 {
-  "name": "nicolas/symfony-forestadmin",
+  "name": "forestadmin/symfony-forestadmin",
   "minimum-stability": "dev",
   "description": "Forest Admin provides an off-the-shelf administration panel based on a highly-extensible API plugged into your application.",
   "type": "symfony-bundle",
@@ -14,10 +14,13 @@
   },
   "autoload": {
     "psr-4": {
-      "Nicolas\\SymfonyForestAdmin\\": "src/"
+      "ForestAdmin\\SymfonyForestAdmin\\": "src/"
     }
   },
   "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/ForestAdmin/symfony-forestadmin/issues"
+  },
   "repositories": [
     {
       "type": "path",
