@@ -1,0 +1,27 @@
+{
+  "name": "nicolas/symfony-forestadmin",
+  "minimum-stability": "dev",
+  "description": "Forest Admin provides an off-the-shelf administration panel based on a highly-extensible API plugged into your application.",
+  "type": "symfony-bundle",
+  "version": "0.0.1",
+  "require": {
+    "php": ">=8.0",
+    "symfony/framework-bundle": "^6.0",
+    "forestadmin/agent-php": "*",
+    "asm89/stack-cors": "^2.1",
+    "doctrine/orm": "^2.12",
+    "symfony/property-access": "6.0.x-dev"
+  },
+  "autoload": {
+    "psr-4": {
+      "Nicolas\\SymfonyForestAdmin\\": "src/"
+    }
+  },
+  "license": "GPL-3.0-or-later",
+  "repositories": [
+    {
+      "type": "path",
+      "url": "/Users/nicolas/sites/agents/in-app/agent-php"
+    }
+  ]
+}
