@@ -6,6 +6,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use ForestAdmin\AgentPHP\Agent\Builder\Agent;
 use ForestAdmin\AgentPHP\Agent\Builder\AgentFactory;
 use ForestAdmin\AgentPHP\Agent\Http\Router;
+use ForestAdmin\AgentPHP\Agent\Utils\Env;
 use ForestAdmin\AgentPHP\DatasourceDoctrine\DoctrineDatasource;
 use ForestAdmin\AgentPHP\DatasourceToolkit\Components\Charts\Chart;
 use ForestAdmin\SymfonyForestAdmin\Controller\ForestController;
@@ -44,22 +45,17 @@ class ForestAgent implements RouteLoaderInterface
     private function loadOptions(): array
     {
         return [
-            'debug'           => $this->env('FOREST_DEBUG', true),
-            'authSecret'      => $this->env('FOREST_AUTH_SECRET'),
-            'agentUrl'        => $this->env('FOREST_AGENT_URL'),
-            'envSecret'       => $this->env('FOREST_ENV_SECRET'),
-            'forestServerUrl' => $this->env('FOREST_SERVER_URL', 'https://api.forestadmin.com'),
-            'isProduction'    => $this->env('FOREST_IS_PRODUCTION', false),
-            'loggerLevel'     => $this->env('FOREST_LOGGER_LEVEL', 'Info'),
-            'prefix'          => $this->env('FOREST_PREFIX', 'forest'),
+            'debug'           => Env::get('FOREST_DEBUG', true),
+            'authSecret'      => Env::get('FOREST_AUTH_SECRET'),
+            'agentUrl'        => Env::get('FOREST_AGENT_URL'),
+            'envSecret'       => Env::get('FOREST_ENV_SECRET'),
+            'forestServerUrl' => Env::get('FOREST_SERVER_URL', 'https://api.forestadmin.com'),
+            'isProduction'    => Env::get('FOREST_IS_PRODUCTION', false),
+            'loggerLevel'     => Env::get('FOREST_LOGGER_LEVEL', 'Info'),
+            'prefix'          => Env::get('FOREST_PREFIX', 'forest'),
             'schemaPath'      => $this->appKernel->getProjectDir() . '/.forestadmin-schema.json',
             'projectDir'      => $this->appKernel->getProjectDir(),
         ];
-    }
-
-    private function env(string $key, $defaultValue = null)
-    {
-        return array_key_exists($key, $_ENV) ? $_ENV[$key] : $defaultValue;
     }
 
     /**
