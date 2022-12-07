@@ -1,5 +1,6 @@
 <?php
 
+use ForestAdmin\SymfonyForestAdmin\Command\SendApimapCommand;
 use ForestAdmin\SymfonyForestAdmin\EventListener\ForestCors;
 use ForestAdmin\SymfonyForestAdmin\Routing\RoutesLoader;
 use ForestAdmin\SymfonyForestAdmin\Service\ForestAgent;
@@ -23,4 +24,10 @@ return static function(ContainerConfigurator $configurator) {
 
     $services->set('forest.cors', ForestCors::class)
         ->tag('kernel.event_subscriber');
+
+    $services
+        ->set(SendApimapCommand::class)
+        ->public()
+        ->arg('$forestAgent', service('forest.agent'))
+        ->tag('console.command');
 };

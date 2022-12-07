@@ -10,7 +10,8 @@
     "forestadmin/agent-php": "*",
     "asm89/stack-cors": "^2.1",
     "doctrine/orm": "^2.12",
-    "symfony/property-access": "6.0.x-dev"
+    "symfony/property-access": "6.0.x-dev",
+    "symfony/console": "6.0.x-dev"
   },
   "autoload": {
     "psr-4": {
