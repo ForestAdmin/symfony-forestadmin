@@ -53,14 +53,9 @@ class ForestAgent implements RouteLoaderInterface
             'isProduction'     => Env::get('FOREST_IS_PRODUCTION', false),
             'loggerLevel'      => Env::get('FOREST_LOGGER_LEVEL', 'Info'),
             'prefix'           => Env::get('FOREST_PREFIX', 'forest'),
+            'cacheDir'         => $this->appKernel->getContainer()->getParameter('kernel.cache_dir') . '/forest',
             'schemaPath'       => $this->appKernel->getProjectDir() . '/.forestadmin-schema.json',
             'projectDir'       => $this->appKernel->getProjectDir(),
-            'databaseDriver'   => Env::get('DATABASE_DRIVER'),
-            'databaseHost'     => Env::get('DATABASE_HOST'),
-            'databasePort'     => Env::get('DATABASE_PORT'),
-            'databaseName'     => Env::get('DATABASE_NAME'),
-            'databaseUsername' => Env::get('DATABASE_USERNAME'),
-            'databasePassword' => Env::get('DATABASE_PASSWORD'),
         ];
     }
 
