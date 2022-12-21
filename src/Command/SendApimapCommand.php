@@ -2,8 +2,6 @@
 
 namespace ForestAdmin\SymfonyForestAdmin\Command;
 
-use ForestAdmin\AgentPHP\Agent\Builder\AgentFactory;
-use ForestAdmin\AgentPHP\Agent\ForestAdminHttpDriver;
 use ForestAdmin\SymfonyForestAdmin\Service\ForestAgent;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -22,9 +20,13 @@ class SendApimapCommand extends Command
             ->setDescription('Send the apimap to Forest');
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    /**
+     * @throws \ErrorException
+     * @throws \JsonException
+     */
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        ForestAdminHttpDriver::sendSchema(AgentFactory::get('datasource'));
+        $this->forestAgent->agent->sendSchema();
 
         $output->writeln('<info>Apimap sent</info>');
 

@@ -6,18 +6,21 @@
   "version": "0.0.1",
   "require": {
     "php": ">=8.0",
-    "symfony/framework-bundle": "^6.0",
-    "forestadmin/agent-php": "*",
     "asm89/stack-cors": "^2.1",
     "doctrine/orm": "^2.12",
-    "symfony/property-access": "6.0.x-dev",
-    "symfony/console": "6.0.x-dev"
+    "forestadmin/agent-php": "*",
+    "symfony/console": "6.0.x-dev",
+    "symfony/framework-bundle": "^6.0",
+    "symfony/property-access": "6.0.x-dev"
   },
   "autoload": {
     "psr-4": {
       "ForestAdmin\\SymfonyForestAdmin\\": "src/"
     }
   },
+  "bin": [
+    "bin/forest"
+  ],
   "license": "GPL-3.0-or-later",
   "bugs": {
     "url": "https://github.com/ForestAdmin/symfony-forestadmin/issues"
@@ -25,7 +28,7 @@
   "repositories": [
     {
       "type": "path",
-      "url": "/Users/nicolas/sites/agents/in-app/agent-php"
+      "url": "/Users/matthieuvideaud/Sites/agents/in-app/agent-php"
     }
   ]
 }
