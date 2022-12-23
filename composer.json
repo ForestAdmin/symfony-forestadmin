@@ -13,9 +13,21 @@
     "symfony/framework-bundle": "^6.0",
     "symfony/property-access": "6.0.x-dev"
   },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^3.0",
+    "pestphp/pest": "^1.21",
+    "pestphp/pest-plugin-mock": "^1.0",
+    "phpspec/prophecy-phpunit": "^2.0",
+    "symfony/var-dumper": "^6.0"
+  },
   "autoload": {
     "psr-4": {
       "ForestAdmin\\SymfonyForestAdmin\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "ForestAdmin\\SymfonyForestAdmin\\Tests\\": "tests/"
     }
   },
   "bin": [
