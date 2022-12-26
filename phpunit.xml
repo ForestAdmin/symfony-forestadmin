@@ -12,7 +12,6 @@
     <coverage processUncoveredFiles="true">
         <include>
             <directory suffix=".php">./src/EventListener</directory>
-            <directory suffix=".php">./src/Service</directory>
         </include>
     </coverage>
 </phpunit>
