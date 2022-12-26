@@ -7,14 +7,14 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
+use Symfony\Component\HttpKernel\Event\ResponseEvent;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 use Symfony\Component\HttpKernel\KernelEvents;
-use Symfony\Component\HttpKernel\Event\ResponseEvent;
 
 class ForestCors implements EventSubscriberInterface
 {
     /**
-     * @var CorsService $cors
+     * @var CorsService
      */
     protected CorsService $cors;
 
@@ -35,7 +35,7 @@ class ForestCors implements EventSubscriberInterface
     {
         $request = $event->getRequest();
 
-        if (HttpKernelInterface::MAIN_REQUEST !== $event->getRequestType() || !$this->shouldRun($request)) {
+        if (HttpKernelInterface::MAIN_REQUEST !== $event->getRequestType() || ! $this->shouldRun($request)) {
             return;
         }
 
@@ -43,8 +43,8 @@ class ForestCors implements EventSubscriberInterface
             $response = $this->cors->handlePreflightRequest($request);
             $this->cors->varyHeader($response, 'Access-Control-Request-Method');
 
-            if ($request->headers->has('Access-Control-Request-Private-Network')) {
-                $response->headers->set('Access-Control-Allow-Private-Network', 'true');
+            if ($request->headers->has('access-control-request-private-network')) {
+                $response->headers->set('access-control-request-private-network', 'true');
             }
 
             $event->setResponse($response);
@@ -56,7 +56,7 @@ class ForestCors implements EventSubscriberInterface
         $request = $event->getRequest();
         $response = $event->getResponse();
 
-        if (HttpKernelInterface::MAIN_REQUEST !== $event->getRequestType() || !$this->shouldRun($request)) {
+        if (HttpKernelInterface::MAIN_REQUEST !== $event->getRequestType() || ! $this->shouldRun($request)) {
             return;
         }
 
@@ -76,7 +76,7 @@ class ForestCors implements EventSubscriberInterface
      */
     protected function addHeaders(Request $request, Response $response): Response
     {
-        if (!$response->headers->has('Access-Control-Allow-Origin')) {
+        if (! $response->headers->has('Access-Control-Allow-Origin')) {
             $response = $this->cors->addActualRequestHeaders($response, $request);
         }
 
