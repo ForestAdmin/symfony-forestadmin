@@ -1,27 +1,46 @@
 {
-  "name": "nicolas/symfony-forestadmin",
+  "name": "forestadmin/symfony-forestadmin",
   "minimum-stability": "dev",
   "description": "Forest Admin provides an off-the-shelf administration panel based on a highly-extensible API plugged into your application.",
   "type": "symfony-bundle",
   "version": "0.0.1",
   "require": {
     "php": ">=8.0",
-    "symfony/framework-bundle": "^6.0",
-    "forestadmin/agent-php": "*",
     "asm89/stack-cors": "^2.1",
     "doctrine/orm": "^2.12",
+    "forestadmin/agent-php": "*",
+    "symfony/console": "6.0.x-dev",
+    "symfony/framework-bundle": "^6.0",
     "symfony/property-access": "6.0.x-dev"
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^3.0",
+    "pestphp/pest": "^1.21",
+    "pestphp/pest-plugin-mock": "^1.0",
+    "phpspec/prophecy-phpunit": "^2.0",
+    "symfony/var-dumper": "^6.0"
   },
   "autoload": {
     "psr-4": {
-      "Nicolas\\SymfonyForestAdmin\\": "src/"
+      "ForestAdmin\\SymfonyForestAdmin\\": "src/"
     }
   },
+  "autoload-dev": {
+    "psr-4": {
+      "ForestAdmin\\SymfonyForestAdmin\\Tests\\": "tests/"
+    }
+  },
+  "bin": [
+    "bin/forest"
+  ],
   "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/ForestAdmin/symfony-forestadmin/issues"
+  },
   "repositories": [
     {
       "type": "path",
-      "url": "/Users/nicolas/sites/agents/in-app/agent-php"
+      "url": "/Users/matthieuvideaud/Sites/agents/in-app/agent-php"
     }
   ]
 }
