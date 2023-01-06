@@ -28,7 +28,7 @@ class SendApimapCommand extends Command
     {
         $this->forestAgent->agent->sendSchema();
 
-        $output->writeln('<info>Apimap sent</info>');
+        $output->writeln('<info>✅ Apimap sent</info>');
 
         return Command::SUCCESS;
     }

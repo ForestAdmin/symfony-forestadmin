@@ -37,12 +37,12 @@ class SetupCommand extends Command
         ];
         $this->addKeysToEnvFile($keys, $input->getArgument('envFileName'));
 
-        $output->writeln('<info>Apimap sent</info>');
+        $output->writeln('<info>✅ Env keys correctly set</info>');
 
         return Command::SUCCESS;
     }
 
-    private function addKeysToEnvFile($keys, $envFileName)
+    private function addKeysToEnvFile($keys, $envFileName): void
     {
         foreach ($keys as $key => $value) {
             file_put_contents($this->projectDir . '/' . $envFileName, PHP_EOL . "$key=$value", FILE_APPEND);
