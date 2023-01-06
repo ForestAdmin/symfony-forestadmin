@@ -19,10 +19,6 @@ class PublishConfigurationCommand extends Command
             ->setDescription('Publish the default Forest Admin configuration to the application');
     }
 
-    /**
-     * @throws \ErrorException
-     * @throws \JsonException
-     */
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $defaultConfigFile = __DIR__ . '/../../config/default.config';

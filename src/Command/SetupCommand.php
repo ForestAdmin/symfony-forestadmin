@@ -24,10 +24,6 @@ class SetupCommand extends Command
             ->setDescription('Setup de the env keys');
     }
 
-    /**
-     * @throws \ErrorException
-     * @throws \JsonException
-     */
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $keys = [
