@@ -1,5 +1,6 @@
 <?php
 
+use ForestAdmin\SymfonyForestAdmin\Command\PublishConfigurationCommand;
 use ForestAdmin\SymfonyForestAdmin\Command\SendApimapCommand;
 use ForestAdmin\SymfonyForestAdmin\Command\SetupCommand;
 use ForestAdmin\SymfonyForestAdmin\EventListener\ForestCors;
@@ -34,6 +35,12 @@ return static function (ContainerConfigurator $configurator) {
 
     $services
         ->set(SetupCommand::class)
+        ->public()
+        ->arg('$projectDir', '%kernel.project_dir%')
+        ->tag('console.command');
+
+    $services
+        ->set(PublishConfigurationCommand::class)
         ->public()
         ->arg('$projectDir', '%kernel.project_dir%')
         ->tag('console.command');
