@@ -1,13 +1,14 @@
 <?php
 
 use ForestAdmin\SymfonyForestAdmin\Command\SendApimapCommand;
+use ForestAdmin\SymfonyForestAdmin\Command\SetupCommand;
 use ForestAdmin\SymfonyForestAdmin\EventListener\ForestCors;
-use ForestAdmin\SymfonyForestAdmin\Routing\RoutesLoader;
 use ForestAdmin\SymfonyForestAdmin\Service\ForestAgent;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
+
 use function Symfony\Component\DependencyInjection\Loader\Configurator\service;
 
-return static function(ContainerConfigurator $configurator) {
+return static function (ContainerConfigurator $configurator) {
     $services = $configurator->services()
         ->defaults()
         ->autowire()
@@ -29,5 +30,11 @@ return static function(ContainerConfigurator $configurator) {
         ->set(SendApimapCommand::class)
         ->public()
         ->arg('$forestAgent', service('forest.agent'))
+        ->tag('console.command');
+
+    $services
+        ->set(SetupCommand::class)
+        ->public()
+        ->arg('$projectDir', '%kernel.project_dir%')
         ->tag('console.command');
 };
