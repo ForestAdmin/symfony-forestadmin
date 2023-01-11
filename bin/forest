@@ -2,13 +2,11 @@
 <?php
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use ForestAdmin\SymfonyForestAdmin\Command\PublishConfigurationCommand;
+use ForestAdmin\SymfonyForestAdmin\Command\InstallCommand;
 use ForestAdmin\SymfonyForestAdmin\Command\SendApimapCommand;
-use ForestAdmin\SymfonyForestAdmin\Command\SetupCommand;
 use Symfony\Component\Console\Application;
 
 $app = new Application();
 $app->add(new SendApimapCommand());
-$app->add(new SetupCommand());
-$app->add(new PublishConfigurationCommand());
+$app->add(new InstallCommand());
 $app->run();
