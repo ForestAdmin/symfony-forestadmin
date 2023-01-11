@@ -31,23 +31,25 @@ class ForestAgent implements RouteLoaderInterface
 
     private function loadConfiguration(): void
     {
-        $callback = require $this->appKernel->getProjectDir() . '/config/packages/symfony_forest_admin.php';
-        $callback($this);
+        if (file_exists($this->appKernel->getProjectDir() . '/config/packages/symfony_forest_admin.php')) {
+            $callback = require $this->appKernel->getProjectDir() . '/config/packages/symfony_forest_admin.php';
+            $callback($this);
+        }
     }
 
     private function loadOptions(): array
     {
         return [
-            'debug'            => Env::get('FOREST_DEBUG', true),
-            'authSecret'       => Env::get('FOREST_AUTH_SECRET'),
-            'agentUrl'         => Env::get('FOREST_AGENT_URL'),
-            'envSecret'        => Env::get('FOREST_ENV_SECRET'),
-            'forestServerUrl'  => Env::get('FOREST_SERVER_URL', 'https://api.forestadmin.com'),
-            'isProduction'     => Env::get('FOREST_IS_PRODUCTION', false),
-            'prefix'           => Env::get('FOREST_PREFIX', 'forest'),
-            'cacheDir'         => $this->appKernel->getContainer()->getParameter('kernel.cache_dir') . '/forest',
-            'schemaPath'       => $this->appKernel->getProjectDir() . '/.forestadmin-schema.json',
-            'projectDir'       => $this->appKernel->getProjectDir(),
+            'debug'           => Env::get('FOREST_DEBUG', true),
+            'authSecret'      => Env::get('FOREST_AUTH_SECRET'),
+            'agentUrl'        => Env::get('FOREST_AGENT_URL'),
+            'envSecret'       => Env::get('FOREST_ENV_SECRET'),
+            'forestServerUrl' => Env::get('FOREST_SERVER_URL', 'https://api.forestadmin.com'),
+            'isProduction'    => Env::get('FOREST_IS_PRODUCTION', false),
+            'prefix'          => Env::get('FOREST_PREFIX', 'forest'),
+            'cacheDir'        => $this->appKernel->getContainer()->getParameter('kernel.cache_dir') . '/forest',
+            'schemaPath'      => $this->appKernel->getProjectDir() . '/.forestadmin-schema.json',
+            'projectDir'      => $this->appKernel->getProjectDir(),
         ];
     }
 
