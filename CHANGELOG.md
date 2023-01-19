@@ -1,3 +1,5 @@
+# [1.0.0-beta.3](https://github.com/ForestAdmin/symfony-forestadmin/compare/v1.0.0-beta.2...v1.0.0-beta.3) (2023-01-19)
+
 # [1.0.0-beta.2](https://github.com/ForestAdmin/symfony-forestadmin/compare/v1.0.0-beta.1...v1.0.0-beta.2) (2023-01-19)
 
 
