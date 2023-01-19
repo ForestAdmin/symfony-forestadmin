@@ -42,7 +42,6 @@ class ForestAgent implements RouteLoaderInterface
         return [
             'debug'           => Env::get('FOREST_DEBUG', true),
             'authSecret'      => Env::get('FOREST_AUTH_SECRET'),
-            'agentUrl'        => Env::get('FOREST_AGENT_URL'),
             'envSecret'       => Env::get('FOREST_ENV_SECRET'),
             'forestServerUrl' => Env::get('FOREST_SERVER_URL', 'https://api.forestadmin.com'),
             'isProduction'    => Env::get('FOREST_IS_PRODUCTION', false),

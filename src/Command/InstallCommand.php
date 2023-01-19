@@ -19,7 +19,6 @@ class InstallCommand extends Command
     {
         $this->setName('forest:install')
             ->addArgument('secretKey', InputArgument::REQUIRED, 'The secret key provided by Forest Admin')
-            ->addArgument('url', InputArgument::REQUIRED, 'The url agent')
             ->addArgument('envFileName', InputArgument::OPTIONAL, 'name of the env file', '.env')
             ->setDescription('Install the Forest admin : setup environment keys & publish the default Forest Admin configuration to the application');
     }
@@ -33,7 +32,6 @@ class InstallCommand extends Command
     {
         $keys = [
             'FOREST_AUTH_SECRET' => Str::random(32),
-            'FOREST_AGENT_URL'   => $input->getArgument('url'),
             'FOREST_ENV_SECRET'  => $input->getArgument('secretKey'),
         ];
         $this->addKeysToEnvFile($output, $keys, $input->getArgument('envFileName'));
