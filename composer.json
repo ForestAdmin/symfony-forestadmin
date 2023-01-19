@@ -8,7 +8,7 @@
     "php": ">=8.0",
     "asm89/stack-cors": "^2.1",
     "doctrine/orm": "^2.12",
-    "forestadmin/agent-php": "^1.0.0.beta",
+    "forestadmin/agent-php": "^1.0.0-beta",
     "symfony/framework-bundle": "^6.0",
     "symfony/console": "^6.0"
   },
