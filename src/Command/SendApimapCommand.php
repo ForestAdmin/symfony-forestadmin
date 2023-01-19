@@ -20,15 +20,11 @@ class SendApimapCommand extends Command
             ->setDescription('Send the apimap to Forest');
     }
 
-    /**
-     * @throws \ErrorException
-     * @throws \JsonException
-     */
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $this->forestAgent->agent->sendSchema();
 
-        $output->writeln('<info>Apimap sent</info>');
+        $output->writeln('<info>✅ Apimap sent</info>');
 
         return Command::SUCCESS;
     }

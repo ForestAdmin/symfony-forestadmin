@@ -1,11 +1,13 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-FILES=$(git diff --name-only --cached | grep -E '\.(php)$'  | tr '\n' ' ')
+PHP_CS_FIXER=vendor/bin/php-cs-fixer
+
+FILES=$(git diff --name-only --cached --diff-filter=d | grep -E '\.(php)$'  | tr '\n' ' ')
 if [ -z "$FILES" ]
 then
     echo "php files not found."
-else
-    vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.dist.php ${FILES}
+elif [ -f "$PHP_CS_FIXER" ]; then
+    $PHP_CS_FIXER fix --config=.php-cs-fixer.dist.php ${FILES}
     git add ${FILES}
 fi
