@@ -44,7 +44,7 @@ class ForestAgent implements RouteLoaderInterface
             'authSecret'      => Env::get('FOREST_AUTH_SECRET'),
             'envSecret'       => Env::get('FOREST_ENV_SECRET'),
             'forestServerUrl' => Env::get('FOREST_SERVER_URL', 'https://api.forestadmin.com'),
-            'isProduction'    => Env::get('FOREST_IS_PRODUCTION', false),
+            'isProduction'    => Env::get('APP_ENV', 'dev') === 'prod',
             'prefix'          => Env::get('FOREST_PREFIX', 'forest'),
             'cacheDir'        => $this->appKernel->getContainer()->getParameter('kernel.cache_dir') . '/forest',
             'schemaPath'      => $this->appKernel->getProjectDir() . '/.forestadmin-schema.json',
