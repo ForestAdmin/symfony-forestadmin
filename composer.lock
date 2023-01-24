@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d28bcd828ad474164252143fe0385560",
+    "content-hash": "985d3e938ab057c3bf50ec8d21c7d956",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1120,16 +1120,16 @@
         },
         {
             "name": "forestadmin/agent-php",
-            "version": "1.0.0-beta.2",
+            "version": "1.0.0-beta.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ForestAdmin/agent-php.git",
-                "reference": "b275fb408ceabbc96d8b7a8ed30107a0d8f6c74c"
+                "reference": "0153a177a08554eb509cc4e0bdf1380d04e80313"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ForestAdmin/agent-php/zipball/b275fb408ceabbc96d8b7a8ed30107a0d8f6c74c",
-                "reference": "b275fb408ceabbc96d8b7a8ed30107a0d8f6c74c",
+                "url": "https://api.github.com/repos/ForestAdmin/agent-php/zipball/0153a177a08554eb509cc4e0bdf1380d04e80313",
+                "reference": "0153a177a08554eb509cc4e0bdf1380d04e80313",
                 "shasum": ""
             },
             "require": {
@@ -1177,9 +1177,9 @@
             "description": "The official agent PHP for Forest",
             "support": {
                 "issues": "https://github.com/ForestAdmin/agent-php/issues",
-                "source": "https://github.com/ForestAdmin/agent-php/tree/v1.0.0-beta.2"
+                "source": "https://github.com/ForestAdmin/agent-php/tree/v1.0.0-beta.5"
             },
-            "time": "2023-01-19T13:52:54+00:00"
+            "time": "2023-01-24T11:11:15+00:00"
         },
         {
             "name": "galbar/jsonpath",
