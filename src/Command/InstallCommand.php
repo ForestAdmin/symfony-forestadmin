@@ -2,6 +2,7 @@
 
 namespace ForestAdmin\SymfonyForestAdmin\Command;
 
+use ForestAdmin\AgentPHP\Agent\Facades\Cache;
 use Illuminate\Support\Str;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -37,6 +38,8 @@ class InstallCommand extends Command
         $this->addKeysToEnvFile($output, $keys, $input->getArgument('envFileName'));
 
         $this->publishConfig($output);
+
+        Cache::forget('config');
 
         return Command::SUCCESS;
     }
