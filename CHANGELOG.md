@@ -1,3 +1,10 @@
+# [1.0.0-beta.6](https://github.com/ForestAdmin/symfony-forestadmin/compare/v1.0.0-beta.5...v1.0.0-beta.6) (2023-01-25)
+
+
+### Bug Fixes
+
+* **onboarding:** set forest_server_url into .env during install  ([#8](https://github.com/ForestAdmin/symfony-forestadmin/issues/8)) ([d06c979](https://github.com/ForestAdmin/symfony-forestadmin/commit/d06c9799147f9bb37f697ab6d78bfb476d7e601c))
+
 # [1.0.0-beta.5](https://github.com/ForestAdmin/symfony-forestadmin/compare/v1.0.0-beta.4...v1.0.0-beta.5) (2023-01-24)
 
 
