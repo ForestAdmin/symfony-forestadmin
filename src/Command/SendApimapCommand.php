@@ -2,6 +2,7 @@
 
 namespace ForestAdmin\SymfonyForestAdmin\Command;
 
+use ForestAdmin\AgentPHP\Agent\Builder\AgentFactory;
 use ForestAdmin\SymfonyForestAdmin\Service\ForestAgent;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -22,7 +23,7 @@ class SendApimapCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $this->forestAgent->agent->sendSchema();
+        AgentFactory::sendSchema(true);
 
         $output->writeln('<info>✅ Apimap sent</info>');
 
