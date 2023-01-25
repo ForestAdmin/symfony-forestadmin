@@ -35,6 +35,5 @@ return static function (ContainerConfigurator $configurator) {
     $services
         ->set(InstallCommand::class)
         ->public()
-        ->arg('$projectDir', '%kernel.project_dir%')
         ->tag('console.command');
 };
