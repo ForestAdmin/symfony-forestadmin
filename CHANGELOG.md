@@ -1,3 +1,10 @@
+# [1.0.0-beta.7](https://github.com/ForestAdmin/symfony-forestadmin/compare/v1.0.0-beta.6...v1.0.0-beta.7) (2023-02-01)
+
+
+### Bug Fixes
+
+* config setup onboarding([#9](https://github.com/ForestAdmin/symfony-forestadmin/issues/9)) ([0e246ae](https://github.com/ForestAdmin/symfony-forestadmin/commit/0e246ae88044e59120c0bacf6a0869487023e12a))
+
 # [1.0.0-beta.6](https://github.com/ForestAdmin/symfony-forestadmin/compare/v1.0.0-beta.5...v1.0.0-beta.6) (2023-01-25)
 
 
