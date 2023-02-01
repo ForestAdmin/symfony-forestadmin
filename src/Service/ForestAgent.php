@@ -31,8 +31,8 @@ class ForestAgent implements RouteLoaderInterface
 
     private function loadConfiguration(): void
     {
-        if (file_exists($this->appKernel->getProjectDir() . '/config/packages/symfony_forest_admin.php')) {
-            $callback = require $this->appKernel->getProjectDir() . '/config/packages/symfony_forest_admin.php';
+        if (file_exists($this->appKernel->getProjectDir() . '/forest/symfony_forest_admin.php')) {
+            $callback = require $this->appKernel->getProjectDir() . '/forest/symfony_forest_admin.php';
             $callback($this);
         }
     }

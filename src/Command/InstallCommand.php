@@ -61,9 +61,13 @@ class InstallCommand extends Command
 
     private function publishConfig(OutputInterface $output)
     {
-        $defaultConfigFile = __DIR__ . '/../../config/default.config';
-        $publishFileName = $this->appKernel->getProjectDir() . '/config/packages/symfony_forest_admin.php';
+        $defaultConfigFile = __DIR__ . '/../../default.config';
+        $publishFileName = $this->appKernel->getProjectDir() . '/forest/symfony_forest_admin.php';
         if (! file_exists($publishFileName)) {
+            $forestDirectory = $this->appKernel->getProjectDir() . '/forest';
+            if (! mkdir($forestDirectory) && ! is_dir($forestDirectory)) {
+                throw new \RuntimeException(sprintf('Directory "%s" was not created', $forestDirectory));
+            }
             copy($defaultConfigFile, $publishFileName);
             $output->writeln('<info>✅ Config file set</info>');
         } else {
