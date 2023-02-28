@@ -4,12 +4,6 @@
   "minimum-stability": "stable",
   "description": "Forest Admin provides an off-the-shelf administration panel based on a highly-extensible API plugged into your application.",
   "type": "symfony-bundle",
-  "repositories": [
-    {
-      "type": "path",
-      "url": "/Users/nicolas/sites/agents/in-app/agent-php"
-    }
-  ],
   "require": {
     "php": ">=8.0",
     "asm89/stack-cors": "^2.1",

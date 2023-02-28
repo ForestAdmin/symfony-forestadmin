@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "810c4462cdeae85052ff6ddf33225672",
+    "content-hash": "7870f9ed3881c1345600f013edaa33ae",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1122,11 +1122,17 @@
         },
         {
             "name": "forestadmin/agent-php",
-            "version": "1.0.0-beta.7",
+            "version": "1.0.0-beta.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ForestAdmin/agent-php.git",
+                "reference": "f2c896ce58a3d9a1d86996f2411ccd2fd41ed09e"
+            },
             "dist": {
-                "type": "path",
-                "url": "/Users/nicolas/sites/agents/in-app/agent-php",
-                "reference": "0cc138a2b4c03229004ffa4dba76fdfe68f3ca6a"
+                "type": "zip",
+                "url": "https://api.github.com/repos/ForestAdmin/agent-php/zipball/f2c896ce58a3d9a1d86996f2411ccd2fd41ed09e",
+                "reference": "f2c896ce58a3d9a1d86996f2411ccd2fd41ed09e",
+                "shasum": ""
             },
             "require": {
                 "doctrine/orm": "^2.10",
@@ -1159,25 +1165,23 @@
             },
             "type": "library",
             "autoload": {
-                "psr-4": {
-                    "ForestAdmin\\AgentPHP\\": "src/"
-                },
                 "files": [
                     "src/Agent/functions.php"
-                ]
-            },
-            "autoload-dev": {
+                ],
                 "psr-4": {
-                    "ForestAdmin\\AgentPHP\\Tests\\": "tests/"
+                    "ForestAdmin\\AgentPHP\\": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "GPL-3.0-or-later"
             ],
             "description": "The official agent PHP for Forest",
-            "transport-options": {
-                "relative": false
-            }
+            "support": {
+                "issues": "https://github.com/ForestAdmin/agent-php/issues",
+                "source": "https://github.com/ForestAdmin/agent-php/tree/v1.0.0-beta.9"
+            },
+            "time": "2023-02-28T10:17:50+00:00"
         },
         {
             "name": "galbar/jsonpath",
