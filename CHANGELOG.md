@@ -1,3 +1,10 @@
+# [1.0.0-beta.9](https://github.com/ForestAdmin/symfony-forestadmin/compare/v1.0.0-beta.8...v1.0.0-beta.9) (2023-02-28)
+
+
+### Features
+
+* update composer.json to enable agent for symfony 5.4 ([#11](https://github.com/ForestAdmin/symfony-forestadmin/issues/11)) ([008668c](https://github.com/ForestAdmin/symfony-forestadmin/commit/008668c99ceca683e726cf90a57d61cbf269cd8f))
+
 # [1.0.0-beta.8](https://github.com/ForestAdmin/symfony-forestadmin/compare/v1.0.0-beta.7...v1.0.0-beta.8) (2023-02-28)
 
 # [1.0.0-beta.7](https://github.com/ForestAdmin/symfony-forestadmin/compare/v1.0.0-beta.6...v1.0.0-beta.7) (2023-02-01)
