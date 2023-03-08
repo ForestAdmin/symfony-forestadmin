@@ -1,3 +1,10 @@
+# [1.0.0-beta.10](https://github.com/ForestAdmin/symfony-forestadmin/compare/v1.0.0-beta.9...v1.0.0-beta.10) (2023-03-08)
+
+
+### Bug Fixes
+
+* **config:** allow packages versions for symfony 6 ([#13](https://github.com/ForestAdmin/symfony-forestadmin/issues/13)) ([e5c4d09](https://github.com/ForestAdmin/symfony-forestadmin/commit/e5c4d09b18a4db051693ed7057c1baf0264d3f77))
+
 # [1.0.0-beta.9](https://github.com/ForestAdmin/symfony-forestadmin/compare/v1.0.0-beta.8...v1.0.0-beta.9) (2023-02-28)
 
 
