@@ -15,3 +15,5 @@ coverage.xml
 
 #php_cs_fixer
 .php-cs-fixer.cache
+
+composer.lock
