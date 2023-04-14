@@ -38,6 +38,13 @@ class ForestAgent implements RouteLoaderInterface
         return $this;
     }
 
+    public function addChart(string $name, \Closure $definition): self
+    {
+        $this->agent->addChart($name, $definition);
+
+        return $this;
+    }
+
     public function build(): void
     {
         $this->agent->build();
