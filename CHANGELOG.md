@@ -1,3 +1,10 @@
+# [1.0.0-beta.11](https://github.com/ForestAdmin/symfony-forestadmin/compare/v1.0.0-beta.10...v1.0.0-beta.11) (2023-04-14)
+
+
+### Features
+
+* **agent:** add proxy methods to improve the agent customization ([#16](https://github.com/ForestAdmin/symfony-forestadmin/issues/16)) ([2984207](https://github.com/ForestAdmin/symfony-forestadmin/commit/298420781a621b5962383f069ea414deede77059))
+
 # [1.0.0-beta.10](https://github.com/ForestAdmin/symfony-forestadmin/compare/v1.0.0-beta.9...v1.0.0-beta.10) (2023-03-08)
 
 
