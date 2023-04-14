@@ -7,6 +7,7 @@ use ForestAdmin\AgentPHP\Agent\Builder\AgentFactory;
 use ForestAdmin\AgentPHP\Agent\Http\Router;
 use ForestAdmin\AgentPHP\Agent\Utils\Env;
 use ForestAdmin\AgentPHP\DatasourceToolkit\Components\Charts\Chart;
+use ForestAdmin\AgentPHP\DatasourceToolkit\Components\Contracts\DatasourceContract;
 use ForestAdmin\SymfonyForestAdmin\Controller\ForestController;
 use Symfony\Bundle\FrameworkBundle\Routing\RouteLoaderInterface;
 use Symfony\Component\HttpKernel\KernelInterface;
@@ -20,7 +21,8 @@ class ForestAgent implements RouteLoaderInterface
     public AgentFactory $agent;
 
     /**
-     * @throws \ReflectionException
+     * @param KernelInterface        $appKernel
+     * @param EntityManagerInterface $entityManager
      */
     public function __construct(private KernelInterface $appKernel, private EntityManagerInterface $entityManager)
     {
@@ -29,27 +31,23 @@ class ForestAgent implements RouteLoaderInterface
         $this->loadConfiguration();
     }
 
-    private function loadConfiguration(): void
+    public function addDatasource(DatasourceContract $datasource, array $options = []): self
     {
-        if (file_exists($this->appKernel->getProjectDir() . '/forest/symfony_forest_admin.php')) {
-            $callback = require $this->appKernel->getProjectDir() . '/forest/symfony_forest_admin.php';
-            $callback($this);
-        }
+        $this->agent->addDatasource($datasource, $options);
+
+        return $this;
     }
 
-    private function loadOptions(): array
+    public function build(): void
     {
-        return [
-            'debug'           => Env::get('FOREST_DEBUG', true),
-            'authSecret'      => Env::get('FOREST_AUTH_SECRET'),
-            'envSecret'       => Env::get('FOREST_ENV_SECRET'),
-            'forestServerUrl' => Env::get('FOREST_SERVER_URL', 'https://api.forestadmin.com'),
-            'isProduction'    => Env::get('APP_ENV', 'dev') === 'prod',
-            'prefix'          => Env::get('FOREST_PREFIX', 'forest'),
-            'cacheDir'        => $this->appKernel->getContainer()->getParameter('kernel.cache_dir') . '/forest',
-            'schemaPath'      => $this->appKernel->getProjectDir() . '/.forestadmin-schema.json',
-            'projectDir'      => $this->appKernel->getProjectDir(),
-        ];
+        $this->agent->build();
+    }
+
+    public function customizeCollection(string $name, \Closure $handle): self
+    {
+        $this->agent->customizeCollection($name, $handle);
+
+        return $this;
     }
 
     /**
@@ -79,5 +77,28 @@ class ForestAgent implements RouteLoaderInterface
     public function getEntityManager(): EntityManagerInterface
     {
         return $this->entityManager;
+    }
+
+    private function loadConfiguration(): void
+    {
+        if (file_exists($this->appKernel->getProjectDir() . '/forest/symfony_forest_admin.php')) {
+            $callback = require $this->appKernel->getProjectDir() . '/forest/symfony_forest_admin.php';
+            $callback($this);
+        }
+    }
+
+    private function loadOptions(): array
+    {
+        return [
+            'debug'           => Env::get('FOREST_DEBUG', true),
+            'authSecret'      => Env::get('FOREST_AUTH_SECRET'),
+            'envSecret'       => Env::get('FOREST_ENV_SECRET'),
+            'forestServerUrl' => Env::get('FOREST_SERVER_URL', 'https://api.forestadmin.com'),
+            'isProduction'    => Env::get('APP_ENV', 'dev') === 'prod',
+            'prefix'          => Env::get('FOREST_PREFIX', 'forest'),
+            'cacheDir'        => $this->appKernel->getContainer()->getParameter('kernel.cache_dir') . '/forest',
+            'schemaPath'      => $this->appKernel->getProjectDir() . '/.forestadmin-schema.json',
+            'projectDir'      => $this->appKernel->getProjectDir(),
+        ];
     }
 }
