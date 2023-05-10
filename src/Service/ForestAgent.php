@@ -45,6 +45,11 @@ class ForestAgent implements RouteLoaderInterface
         return $this;
     }
 
+    public function use(string $plugin, array $options = []): self
+    {
+        $this->agent->use($plugin, $options);
+    }
+
     public function build(): void
     {
         $this->agent->build();
