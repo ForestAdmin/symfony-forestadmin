@@ -1,3 +1,10 @@
+# [1.0.0-beta.12](https://github.com/ForestAdmin/symfony-forestadmin/compare/v1.0.0-beta.11...v1.0.0-beta.12) (2023-05-10)
+
+
+### Features
+
+* **plugin:** allow agent to handle plugin ([#18](https://github.com/ForestAdmin/symfony-forestadmin/issues/18)) ([f6837e6](https://github.com/ForestAdmin/symfony-forestadmin/commit/f6837e6929ee356f8784a0214d5bb4733acdcdbb))
+
 # [1.0.0-beta.11](https://github.com/ForestAdmin/symfony-forestadmin/compare/v1.0.0-beta.10...v1.0.0-beta.11) (2023-04-14)
 
 
