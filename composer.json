@@ -8,9 +8,10 @@
     "php": ">=8.0",
     "asm89/stack-cors": "^2.1",
     "doctrine/orm": "^2.8",
-    "forestadmin/agent-php": "^1.0.0-beta",
     "symfony/framework-bundle": "^5.4|^6.0",
-    "symfony/console": "^5.4|^6.0"
+    "symfony/console": "^5.4|^6.0",
+    "forestadmin/php-datasource-doctrine": "^1.0@beta",
+    "forestadmin/php-datasource-customizer": "^1.0@beta"
   },
   "require-dev": {
     "friendsofphp/php-cs-fixer": "^3.0",
