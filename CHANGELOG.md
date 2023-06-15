@@ -1,3 +1,10 @@
+# [1.0.0-beta.13](https://github.com/ForestAdmin/symfony-forestadmin/compare/v1.0.0-beta.12...v1.0.0-beta.13) (2023-06-15)
+
+
+### Features
+
+* update composer with the new dependencies of the monorepo agent-php ([#19](https://github.com/ForestAdmin/symfony-forestadmin/issues/19)) ([efa7e29](https://github.com/ForestAdmin/symfony-forestadmin/commit/efa7e2951d6fb92ac6101a8393fa32072060a84a))
+
 # [1.0.0-beta.12](https://github.com/ForestAdmin/symfony-forestadmin/compare/v1.0.0-beta.11...v1.0.0-beta.12) (2023-05-10)
 
 
