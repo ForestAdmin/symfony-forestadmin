@@ -1,6 +1,6 @@
 <?php
 
-namespace Nicolas\SymfonyForestAdmin\DependencyInjection;
+namespace ForestAdmin\SymfonyForestAdmin\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;

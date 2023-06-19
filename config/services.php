@@ -1,12 +1,14 @@
 <?php
 
-use Nicolas\SymfonyForestAdmin\EventListener\ForestCors;
-use Nicolas\SymfonyForestAdmin\Routing\RoutesLoader;
-use Nicolas\SymfonyForestAdmin\Service\ForestAgent;
+use ForestAdmin\SymfonyForestAdmin\Command\InstallCommand;
+use ForestAdmin\SymfonyForestAdmin\Command\SendApimapCommand;
+use ForestAdmin\SymfonyForestAdmin\EventListener\ForestCors;
+use ForestAdmin\SymfonyForestAdmin\Service\ForestAgent;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
+
 use function Symfony\Component\DependencyInjection\Loader\Configurator\service;
 
-return static function(ContainerConfigurator $configurator) {
+return static function (ContainerConfigurator $configurator) {
     $services = $configurator->services()
         ->defaults()
         ->autowire()
@@ -18,9 +20,20 @@ return static function(ContainerConfigurator $configurator) {
 
     $services->alias(ForestAgent::class, 'forest.agent');
 
-    $services->load('Nicolas\\SymfonyForestAdmin\\Controller\\', '../src/Controller')
+    $services->load('ForestAdmin\\SymfonyForestAdmin\\Controller\\', '../src/Controller')
         ->tag('controller.service_arguments');
 
     $services->set('forest.cors', ForestCors::class)
         ->tag('kernel.event_subscriber');
+
+    $services
+        ->set(SendApimapCommand::class)
+        ->public()
+        ->arg('$forestAgent', service('forest.agent'))
+        ->tag('console.command');
+
+    $services
+        ->set(InstallCommand::class)
+        ->public()
+        ->tag('console.command');
 };

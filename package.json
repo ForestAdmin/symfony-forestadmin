@@ -1,0 +1,31 @@
+{
+  "name": "symfony-forestadmin",
+  "version": "1.0.0-beta.13",
+  "description": "The official symfony agent for Forest.",
+  "scripts": {
+    "postinstall": "husky install",
+    "prepack": "pinst --disable",
+    "postpack": "pinst --enable",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ForestAdmin/symfony-forestadmin.git"
+  },
+  "author": "",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/ForestAdmin/symfony-forestadmin/issues"
+  },
+  "homepage": "https://github.com/ForestAdmin/symfony-forestadmin#readme",
+  "devDependencies": {
+    "@commitlint/cli": "11.0.0",
+    "@commitlint/config-conventional": "11.0.0",
+    "@semantic-release/changelog": "6.0.1",
+    "@semantic-release/exec": "6.0.3",
+    "@semantic-release/git": "10.0.1",
+    "husky": "^8.0.1",
+    "semantic-release": "19.0.2",
+    "semantic-release-slack-bot": "3.5.2"
+  }
+}

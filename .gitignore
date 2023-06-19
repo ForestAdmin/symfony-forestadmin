@@ -1,3 +1,19 @@
-.idea
-.DS_STORE
+/.idea
+/.vscode
+.DS_Store
+
+# npm
+node_modules
+
+# composer
 vendor
+
+# phpunit
+.phpunit.result.cache
+coverage
+coverage.xml
+
+#php_cs_fixer
+.php-cs-fixer.cache
+
+composer.lock
