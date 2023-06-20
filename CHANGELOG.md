@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/ForestAdmin/symfony-forestadmin/compare/v1.0.0...v1.0.1) (2023-06-20)
+
+
+### Bug Fixes
+
+* **composer:** replace all beta versions with stable versions of packages ([#21](https://github.com/ForestAdmin/symfony-forestadmin/issues/21)) ([fa284c2](https://github.com/ForestAdmin/symfony-forestadmin/commit/fa284c296494eb3a6007f6bea9651548b06ad1c6))
+
 # 1.0.0 (2023-06-19)
 
 
