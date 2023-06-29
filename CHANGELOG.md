@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/ForestAdmin/symfony-forestadmin/compare/v1.0.1...v1.0.2) (2023-06-29)
+
+
+### Bug Fixes
+
+* set config environment to FOREST_ENVIRONMENT & update default permission expiration delay ([#22](https://github.com/ForestAdmin/symfony-forestadmin/issues/22)) ([a2ba0c9](https://github.com/ForestAdmin/symfony-forestadmin/commit/a2ba0c9621a7a3ea6412e9592c599e45ae7f890c))
+
 ## [1.0.1](https://github.com/ForestAdmin/symfony-forestadmin/compare/v1.0.0...v1.0.1) (2023-06-20)
 
 
