@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/ForestAdmin/symfony-forestadmin/compare/v1.0.2...v1.1.0) (2023-08-01)
+
+
+### Features
+
+* **logger:** allow users to add a custom logger ([#24](https://github.com/ForestAdmin/symfony-forestadmin/issues/24)) ([5035407](https://github.com/ForestAdmin/symfony-forestadmin/commit/503540736d81bfe45d82a08b7b9174e9e29cce1f))
+
 ## [1.0.2](https://github.com/ForestAdmin/symfony-forestadmin/compare/v1.0.1...v1.0.2) (2023-06-29)
 
 
