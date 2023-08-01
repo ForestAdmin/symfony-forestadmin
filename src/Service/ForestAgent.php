@@ -31,6 +31,13 @@ class ForestAgent implements RouteLoaderInterface
         $this->loadConfiguration();
     }
 
+    public function createAgent(array $options = []): self
+    {
+        $this->agent->createAgent($options);
+
+        return $this;
+    }
+
     public function addDatasource(DatasourceContract $datasource, array $options = []): self
     {
         $this->agent->addDatasource($datasource, $options);
@@ -48,6 +55,8 @@ class ForestAgent implements RouteLoaderInterface
     public function use(string $plugin, array $options = []): self
     {
         $this->agent->use($plugin, $options);
+
+        return $this;
     }
 
     public function build(): void
