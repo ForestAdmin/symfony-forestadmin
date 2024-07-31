@@ -10,8 +10,8 @@
     "doctrine/orm": "^2.8",
     "symfony/framework-bundle": "^5.4|^6.0",
     "symfony/console": "^5.4|^6.0",
-    "forestadmin/php-datasource-doctrine": "^1.0",
-    "forestadmin/php-datasource-customizer": "^1.0"
+    "forestadmin/php-datasource-doctrine": "^1.9.4",
+    "forestadmin/php-datasource-customizer": "^1.9.4"
   },
   "require-dev": {
     "friendsofphp/php-cs-fixer": "^3.0",
