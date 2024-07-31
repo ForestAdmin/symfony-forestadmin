@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/ForestAdmin/symfony-forestadmin/compare/v1.1.0...v1.1.1) (2024-07-31)
+
+
+### Bug Fixes
+
+* update minimum version of agent-php packages ([#25](https://github.com/ForestAdmin/symfony-forestadmin/issues/25)) ([6ef2793](https://github.com/ForestAdmin/symfony-forestadmin/commit/6ef27933e31c546a448d82ec894c707dbb87c0c3))
+
 # [1.1.0](https://github.com/ForestAdmin/symfony-forestadmin/compare/v1.0.2...v1.1.0) (2023-08-01)
 
 
