@@ -7,18 +7,18 @@
   "require": {
     "php": ">=8.0",
     "asm89/stack-cors": "^2.1",
-    "doctrine/orm": "^2.8",
-    "symfony/framework-bundle": "^5.4|^6.0",
-    "symfony/console": "^5.4|^6.0",
-    "forestadmin/php-datasource-doctrine": "^1.9.4",
-    "forestadmin/php-datasource-customizer": "^1.9.4"
+    "doctrine/orm": "^2.8|^3.0",
+    "symfony/framework-bundle": "^5.4|^6.0|^7.0",
+    "symfony/console": "^5.4|^6.0|^7.0",
+    "forestadmin/php-datasource-doctrine": "^1.9.3",
+    "forestadmin/php-datasource-customizer": "^1.9.3"
   },
   "require-dev": {
     "friendsofphp/php-cs-fixer": "^3.0",
     "pestphp/pest": "^1.21",
     "pestphp/pest-plugin-mock": "^1.0",
     "phpspec/prophecy-phpunit": "^2.0",
-    "symfony/var-dumper": "^5.4|^6.0"
+    "symfony/var-dumper": "^5.4|^6.0|^7.0"
   },
   "autoload": {
     "psr-4": {
