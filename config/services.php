@@ -16,7 +16,7 @@ return static function (ContainerConfigurator $configurator) {
 
     $services->set('forest.agent', ForestAgent::class)
         ->public()
-        ->arg('$entityManager', service('doctrine.orm.entity_manager'));
+        ->arg('$doctrine', service('doctrine'));
 
     $services->alias(ForestAgent::class, 'forest.agent');
 
