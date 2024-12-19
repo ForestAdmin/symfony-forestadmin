@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/ForestAdmin/symfony-forestadmin/compare/v1.1.1...v1.2.0) (2024-12-19)
+
+
+### Features
+
+* **capabilities:** add native query support ([#27](https://github.com/ForestAdmin/symfony-forestadmin/issues/27)) ([c690f15](https://github.com/ForestAdmin/symfony-forestadmin/commit/c690f1575c53ae1e67b91290bc5092016f5c11ab))
+
 ## [1.1.1](https://github.com/ForestAdmin/symfony-forestadmin/compare/v1.1.0...v1.1.1) (2024-07-31)
 
 
