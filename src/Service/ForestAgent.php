@@ -2,7 +2,7 @@
 
 namespace ForestAdmin\SymfonyForestAdmin\Service;
 
-use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\Persistence\ManagerRegistry;
 use ForestAdmin\AgentPHP\Agent\Builder\AgentFactory;
 use ForestAdmin\AgentPHP\Agent\Http\Router;
 use ForestAdmin\AgentPHP\Agent\Utils\Env;
@@ -22,9 +22,8 @@ class ForestAgent implements RouteLoaderInterface
 
     /**
      * @param KernelInterface        $appKernel
-     * @param EntityManagerInterface $entityManager
      */
-    public function __construct(private KernelInterface $appKernel, private EntityManagerInterface $entityManager)
+    public function __construct(private KernelInterface $appKernel, private ManagerRegistry $doctrine)
     {
         $this->options = $this->loadOptions();
         $this->agent = new AgentFactory($this->options);
@@ -95,9 +94,9 @@ class ForestAgent implements RouteLoaderInterface
         return $this->agent->renderChart($chart);
     }
 
-    public function getEntityManager(): EntityManagerInterface
+    public function getManagerRegistry(): ManagerRegistry
     {
-        return $this->entityManager;
+        return $this->doctrine;
     }
 
     private function loadConfiguration(): void
